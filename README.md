@@ -5,14 +5,14 @@ Pls is a command line utility that creates a new Django project for you and sets
 
 ### Installation
 
-You'll need:
+##### You'll need:
   - Python 2.7 (`brew install python` or `sudo apt-get install python2.7`)
   - PIP 
   - VirtualEnv (`pip install virtualenv`)
   - Postgres (`brew install postgres` or `sudo apt-get install postgresql`)
   - An Amazon AWS Account (http://aws.amazon.com)
   
-To Install:
+##### To Install:
 
 `pip install pls`
 
@@ -26,12 +26,12 @@ In 5-10 minutes your project should be 100% ready, run `source venv/bin/activate
 
 A git repository has been initialized for you.
 
-To deploy to AWS:
+##### To deploy to AWS:
 
 1. Commit to git
 2. `eb deploy`
 
-Other useful commands:
+##### Other useful commands:
 
 `eb logs` - To view AWS logs
 
