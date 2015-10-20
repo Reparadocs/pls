@@ -6,3 +6,4 @@ TODO:
 - S3 Integration
 - GitHub Integration
 - Secret Key?
+- PIP
