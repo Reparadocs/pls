@@ -12,8 +12,8 @@ def pls():
 @click.argument('name')
 def init(name):
     call(['git', 'init'])
-    call(['virtualenv', 'env-' + name])
-    venv_file = 'env-' + name + '/bin/activate_this.py'
+    call(['virtualenv', 'venv'])
+    venv_file = 'venv/bin/activate_this.py'
     execfile(venv_file, dict(__file__=venv_file))
     call(['pip', 'install', 'django'])
     call(['pip', 'install', 'psycopg2'])
