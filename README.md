@@ -36,6 +36,8 @@ In 5-10 minutes your project should be 100% ready! It's that easy. A git reposit
 
 `eb console` - Open the AWS console
 
+'python manage.py runserver' - Runs the server locally
+
 
 ### Planned Features:
 
