@@ -21,7 +21,15 @@ I strongly suggest using virtualenv (https://virtualenv.pypa.io/en/latest/) as w
 
 If prompted, input your AWS Access Keys (https://console.aws.amazon.com/iam/home?region=us-west-2#security_credential)
 
-In 5-10 minutes your project should be 100% ready! It's that easy. A git repository has been initialized for you.
+In 5-10 minutes your project should be 100% ready! It's that easy.
+
+Here's what's been setup for you:
+
+- A git repo (http://git-scm.com/docs/gittutorial)
+
+- A django project and app (https://docs.djangoproject.com/en/1.8/)
+
+- Elastic Beanstalk for hosting (http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-getting-started.html)
 
 ##### To deploy to AWS:
 
