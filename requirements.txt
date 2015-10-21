@@ -1,0 +1,4 @@
+click==5.1
+Django==1.8.5
+pls==0.0.3
+wheel==0.24.0
