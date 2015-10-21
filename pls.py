@@ -11,6 +11,7 @@ def pls():
 @pls.command()
 @click.argument('name')
 def init(name):
+    first_app = raw_input('Name your Django app (different from project name): ')
     call(['git', 'init'])
     call(['virtualenv', 'venv'])
     venv_file = 'venv/bin/activate_this.py'
@@ -37,9 +38,12 @@ def init(name):
     py_settings.close()
     django_settings_data = urllib2.urlopen('https://raw.githubusercontent.com/Reparadocs/pls-config/master/settings.py').read()
     django_settings_data = django_settings_data.replace('REPLACE_THIS', name)
+    django_settings_data = django_settings_data.replace('RTHIS_APP', first_app)
     django_settings = open(name + '/settings.py', 'w')
     django_settings.write(django_settings_data)
     django_settings.close()
+    call(['python', 'manage.py', 'startapp', first_app])
+    call(['python', 'manage.py', 'migrate'])
     os.chdir('..')
     gitignore_data = urllib2.urlopen('https://raw.githubusercontent.com/Reparadocs/pls-config/master/.gitignore').read()
     gitignore_data = gitignore_data.replace('REPLACE_THIS', name)
