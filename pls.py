@@ -50,6 +50,23 @@ def init(name):
     call(['eb', 'create', name + '-dev', '--database.engine', 'postgres', '--timeout', '99999999'])
     call(['eb', 'console'])
 
+@pls.command()
+@click.argument('app_name')
+def migrate(app_name):
+    call(['python', 'manage.py', 'makemigrations', app_name])
+    call(['python', 'manage.py', 'migrate'])
+
+@pls.command()
+def deploy():
+    installed_packages = pip.get_installed_distributions()
+    installed_packages_list = sorted(["%s==%s\n" % (i.key, i.version)
+        for i in installed_packages])
+    requirements = open('requirements.txt', 'w')
+    for package in installed_packages_list:
+        requirements.write(package)
+    requirements.close()
+    call(['eb', 'deploy']) 
+
 def main():
     pls()
        
